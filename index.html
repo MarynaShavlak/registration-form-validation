@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ukr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Outfit:100,200,300,regular,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sofia+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="modal register-modal ">
+      <form class="modal__form">
+        <h2 class="form__title">Registration</h2>
+        <ul class="fields">
+          <li class="fields__item">
+            <label class="form__label" for="name">Full Name</label>
+            <input class="form__input" type="text" id="name" placeholder="Enter your name" />
+          </li>
+          <li class="fields__item">
+            <label class="form__label" for="username">Username</label>
+            <input class="form__input" type="text" id="username" placeholder="Enter your username" />
+          </li>
+          <li class="fields__item">
+            <label class="form__label" for="email">Email</label>
+            <input class="form__input" type="email" id="email" placeholder="Enter your email" />
+          </li>
+          <li class="fields__item">
+            <label class="form__label" for="phone">Phone Number</label>
+            <input class="form__input" type="text" id="phone"placeholder="Enter your number" />
+          </li>
+          <li class="fields__item">
+            <label class="form__label" for="password">Password</label>
+            <input class="form__input" type="text" id="password" placeholder="Enter your password"/>
+          </li>
+          <li class="fields__item">
+            <label class="form__label" for="password-confirm"
+              >Confirm Password</label
+            >
+            <input class="form__input" type="text" id="password-confirm" placeholder="Confirm your password"/>
+          </li>
+        </ul>
+        <button type="submit" class="form__btn btn--register">
+          Register
+        </button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
