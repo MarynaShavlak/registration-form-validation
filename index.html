@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="modal register-modal ">
-      <form class="modal__form">
+    <div class="from__wrap">
+      <form class="reg-form" id="registrationForm">
         <h2 class="form__title">Registration</h2>
         <ul class="fields">
           <li class="fields__item">
@@ -51,10 +51,10 @@
             <input class="form__input" type="text" id="password" placeholder="Enter your password"/>
           </li>
           <li class="fields__item">
-            <label class="form__label" for="password-confirm"
+            <label class="form__label" for="passwordConfirm"
               >Confirm Password</label
             >
-            <input class="form__input" type="text" id="password-confirm" placeholder="Confirm your password"/>
+            <input class="form__input" type="text" id="passwordConfirm" placeholder="Confirm your password"/>
           </li>
         </ul>
         <button type="submit" class="form__btn btn--register">
@@ -62,7 +62,8 @@
         </button>
       </form>
     </div>
-
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="inputmask.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
