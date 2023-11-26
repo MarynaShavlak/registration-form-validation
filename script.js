@@ -71,6 +71,8 @@ validationReg
     { rule: 'strongPassword' },
   ])
   .addRequiredGroup(genderFieldSelector);
+  
+  
 
 const regForm = document.querySelector(regFormSelector);
 regForm.addEventListener('submit', sendForm);
@@ -102,6 +104,7 @@ function sendForm(e) {
     Object.values(formData).every(value => value !== '' && value !== undefined)
   ) {
     console.log('formData : ', formData);
+    validationReg.refresh();
     regForm.reset();
   } else {
     console.log('Data in form is not valid');
