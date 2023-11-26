@@ -32,34 +32,87 @@
         <ul class="fields">
           <li class="fields__item">
             <label class="form__label" for="name">Full Name</label>
-            <input class="form__input" type="text" id="name" placeholder="Enter your name" />
+            <input
+              class="form__input"
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+            />
           </li>
           <li class="fields__item">
             <label class="form__label" for="username">Username</label>
-            <input class="form__input" type="text" id="username" placeholder="Enter your username" />
+            <input
+              class="form__input"
+              type="text"
+              id="username"
+              placeholder="Enter your username"
+            />
           </li>
           <li class="fields__item">
             <label class="form__label" for="email">Email</label>
-            <input class="form__input" type="email" id="email" placeholder="Enter your email" />
+            <input
+              class="form__input"
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+            />
           </li>
           <li class="fields__item">
             <label class="form__label" for="phone">Phone Number</label>
-            <input class="form__input" type="text" id="phone"placeholder="Enter your number" />
+            <input
+              class="form__input"
+              type="text"
+              id="phone"
+              placeholder="Enter your number"
+            />
           </li>
           <li class="fields__item">
             <label class="form__label" for="password">Password</label>
-            <input class="form__input" type="text" id="password" placeholder="Enter your password"/>
+            <input
+              class="form__input"
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
           </li>
           <li class="fields__item">
             <label class="form__label" for="passwordConfirm"
               >Confirm Password</label
             >
-            <input class="form__input" type="text" id="passwordConfirm" placeholder="Confirm your password"/>
+            <input
+              class="form__input"
+              type="password"
+              id="passwordConfirm"
+              placeholder="Confirm your password"
+            />
+          </li>
+          <li class="fields__item">
+            <label class="form__label">Gender</label>
+            <div class="form__radio-group" id="advanced-usage_communication_radio_group">
+              <div class="radio-group__wrap">
+                <input type="radio" id="male" name="gender" class="input-gender" value="Male" />
+                <label for="male">Male</label>
+              </div>
+
+              <div class="radio-group__wrap">
+                <input type="radio" id="female" name="gender" class="input-gender" value="Female" />
+                <label for="female">Female</label>
+              </div>
+
+              <div class="radio-group__wrap">
+                <input
+                  type="radio"
+                  id="preferNotToSay"
+                  name="gender"
+                  class="input-gender"
+                  value="Prefer not to say"
+                />
+                <label for="preferNotToSay">Prefer not to say</label>
+              </div>
+            </div>
           </li>
         </ul>
-        <button type="submit" class="form__btn btn--register">
-          Register
-        </button>
+        <button type="submit" class="form__btn btn--register">Register</button>
       </form>
     </div>
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>

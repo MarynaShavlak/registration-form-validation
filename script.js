@@ -5,14 +5,10 @@ const phoneFieldSelector = '#phone';
 const emailFieldSelector = '#email';
 const passwordFieldSelector = '#password';
 const passwordConfirmFieldSelector = '#passwordConfirm';
+const genderFieldSelector = '#advanced-usage_communication_radio_group';
 const regFormSelector = '.reg-form';
 
-
-const validationConfig = {
-  validateBeforeSubmitting: true,
-};
-
-const validationReg = new JustValidate(registrationFormSelector, validationConfig);
+const validationReg = new JustValidate(registrationFormSelector);
 const inputPhone = document.querySelector(phoneFieldSelector);
 const phoneMask = new Inputmask('+38(999)999-99-99');
 phoneMask.mask(inputPhone);
@@ -20,22 +16,35 @@ phoneMask.mask(inputPhone);
 validationReg
   .addField(nameFieldSelector, [
     { rule: 'required', errorMessage: 'Please enter your name' },
-    { rule: 'minLength', value: 2, errorMessage: 'Name should have a minimum of 2 characters' },
+    {
+      rule: 'minLength',
+      value: 2,
+      errorMessage: 'Name should have a minimum of 2 characters',
+    },
   ])
   .addField(usernameFieldSelector, [
     { rule: 'required', errorMessage: 'Please enter your username' },
-    { rule: 'minLength', value: 2, errorMessage: 'Username should have a minimum of 2 characters' },
+    {
+      rule: 'minLength',
+      value: 4,
+      errorMessage: 'Username should have a minimum of 4 characters',
+    },
+    {
+      rule: 'customRegexp',
+      value: /^[a-zA-Z0-9]+$/,
+      errorMessage: 'Only letters (a-z or A-Z) and digits (0-9) are allowed',
+    },
   ])
   .addField(phoneFieldSelector, [
     {
-      validator: (value) => {
+      validator: value => {
         const phone = getUnmaskedPhoneValue();
         return Boolean(Number(phone) && phone.length > 0);
       },
       errorMessage: 'Please enter a valid phone number',
     },
     {
-      validator: (value) => {
+      validator: value => {
         const phone = getUnmaskedPhoneValue();
         return Boolean(Number(phone) && phone.length === 10);
       },
@@ -48,7 +57,7 @@ validationReg
   ])
   .addField(passwordFieldSelector, [
     { rule: 'required', errorMessage: 'Please enter your password' },
-    { rule: 'minLength', value: 6, errorMessage: 'Password should have a minimum of 6 characters' },
+    { rule: 'strongPassword' },
   ])
   .addField(passwordConfirmFieldSelector, [
     { rule: 'required', errorMessage: 'Please confirm your password' },
@@ -59,24 +68,21 @@ validationReg
       },
       errorMessage: 'Passwords do not match',
     },
-    {
-      rule: 'minLength',
-      value: 6,
-      errorMessage: 'Password confirmation should have a minimum of 6 characters',
-    },
+    { rule: 'strongPassword' },
   ])
-  .onSuccess(handleSubmit);
+  .addRequiredGroup(genderFieldSelector);
+
+const regForm = document.querySelector(regFormSelector);
+regForm.addEventListener('submit', sendForm);
 
 function getUnmaskedPhoneValue() {
   return inputPhone.inputmask.unmaskedvalue();
 }
 
-
-// function resetForm(form) {
-//   form.reset();
-// }
-
 function getFormData(form) {
+  const genderRadioButtons = form.querySelectorAll('.input-gender:checked');
+  const gender =
+    genderRadioButtons.length > 0 ? genderRadioButtons[0].value : undefined;
   return {
     name: form.querySelector(nameFieldSelector).value,
     username: form.querySelector(usernameFieldSelector).value,
@@ -84,56 +90,20 @@ function getFormData(form) {
     email: form.querySelector(emailFieldSelector).value,
     password: form.querySelector(passwordFieldSelector).value,
     passwordConfirm: form.querySelector(passwordConfirmFieldSelector).value,
+    gender: gender,
   };
 }
 
-
-async function handleSubmit(event) {
-  console.log('submit');
+function sendForm(e) {
+  e.preventDefault();
   const regForm = document.querySelector(regFormSelector);
-  regForm.addEventListener('submit', sendForm);
-
-  async function sendForm(e) {
-    e.preventDefault();
-    const formData = getFormData(regForm);
-    regForm.classList.add('form--sending');
-    let response = await fetch('sendForm.php', {
-      method:'POST',
-      body: formData
-    });
-    if (response.ok) {
-      let result = await response.json();
-      alert(result.message);
-      regForm.reset();
-      regForm.classList.add('form--sending');
-    } else {
-      alert('error');
-      regForm.classList.add('form--sending');
-    }
-
+  const formData = getFormData(regForm);
+  if (
+    Object.values(formData).every(value => value !== '' && value !== undefined)
+  ) {
+    console.log('formData : ', formData);
+    regForm.reset();
+  } else {
+    console.log('Data in form is not valid');
   }
-  
-
-  // try {
-  //   // Example: Send form data using Fetch API
-  //   const response = await fetch('your-api-endpoint', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(formData),
-  //   });
-
-  //   // Handle the response data
-  //   const data = await response.json();
-  //   console.log(data);
-
-  //   // Optionally reset the form or perform other actions
-  //   resetForm(regForm);
-  // } catch (error) {
-  //   // Handle errors
-  //   console.error('Error:', error);
-  // }
 }
-
-// Attach the named function to the onSuccess event
