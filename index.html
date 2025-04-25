@@ -11,79 +11,75 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Outfit:100,200,300,regular,500,600,700,800,900"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Sofia+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="from__wrap">
+  <main class="container">
+    <img src="./images/back.png" class="form__img" alt="form image with skeleton with notebook "/>
+    <div class="form__wrap">
+      <img src="./images/logo.svg" class="logo" alt="image of the company logo"/>
       <form class="reg-form" id="registrationForm">
-        <h2 class="form__title">Registration</h2>
+
+        <h2 class="form__title">Create your account</h2>
+        <p class="form__slogan"> See what is going on with your business</p>
         <ul class="fields">
           <li class="fields__item">
             <label class="form__label" for="name">Full Name</label>
             <input
-              class="form__input"
-              type="text"
-              id="name"
-              placeholder="Enter your name"
+                    class="form__input"
+                    type="text"
+                    id="name"
+                    placeholder="Your full name"
             />
           </li>
           <li class="fields__item">
             <label class="form__label" for="username">Username</label>
             <input
-              class="form__input"
-              type="text"
-              id="username"
-              placeholder="Enter your username"
+                    class="form__input"
+                    type="text"
+                    id="username"
+                    placeholder="Your username"
             />
           </li>
           <li class="fields__item">
             <label class="form__label" for="email">Email</label>
             <input
-              class="form__input"
-              type="email"
-              id="email"
-              placeholder="Enter your email"
+                    class="form__input"
+                    type="email"
+                    id="email"
+                    placeholder="someEmail@gmail.com"
             />
           </li>
           <li class="fields__item">
             <label class="form__label" for="phone">Phone Number</label>
             <input
-              class="form__input"
-              type="text"
-              id="phone"
-              placeholder="Enter your number"
+                    class="form__input"
+                    type="text"
+                    id="phone"
+                    placeholder="Enter your number"
             />
           </li>
           <li class="fields__item">
             <label class="form__label" for="password">Password</label>
             <input
-              class="form__input"
-              type="password"
-              id="password"
-              placeholder="Enter your password"
+                    class="form__input"
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
             />
           </li>
           <li class="fields__item">
             <label class="form__label" for="passwordConfirm"
-              >Confirm Password</label
+            >Confirm Password</label
             >
             <input
-              class="form__input"
-              type="password"
-              id="passwordConfirm"
-              placeholder="Confirm your password"
+                    class="form__input"
+                    type="password"
+                    id="passwordConfirm"
+                    placeholder="Confirm your password"
             />
           </li>
           <li class="fields__item">
@@ -91,23 +87,23 @@
             <div class="form__radio-group" id="advanced-usage_communication_radio_group">
               <div class="radio-group__wrap">
                 <input type="radio" id="male" name="gender" class="input-gender" value="Male" />
-                <label for="male">Male</label>
+                <label for="male" class="radio-group__label">Male</label>
               </div>
 
               <div class="radio-group__wrap">
                 <input type="radio" id="female" name="gender" class="input-gender" value="Female" />
-                <label for="female">Female</label>
+                <label for="female" class="radio-group__label">Female</label>
               </div>
 
               <div class="radio-group__wrap">
                 <input
-                  type="radio"
-                  id="preferNotToSay"
-                  name="gender"
-                  class="input-gender"
-                  value="Prefer not to say"
+                        type="radio"
+                        id="preferNotToSay"
+                        name="gender"
+                        class="input-gender"
+                        value="Prefer not to say"
                 />
-                <label for="preferNotToSay">Prefer not to say</label>
+                <label for="preferNotToSay" class="radio-group__label">Prefer not to say</label>
               </div>
             </div>
           </li>
@@ -115,6 +111,8 @@
         <button type="submit" class="form__btn btn--register">Register</button>
       </form>
     </div>
+  </main>
+
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
     <script src="inputmask.min.js"></script>
     <script src="script.js"></script>
