@@ -24,8 +24,10 @@ body {
 .registration-form__image {
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
-  width: 765px;
-  height: 700px;
+  /*width: 765px;*/
+  /*height: 700px;*/
+  width: 700px;
+  height: 640px;
 }
 
 ul {
@@ -54,7 +56,7 @@ ul {
 
 .registration-form__fields {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 32px;
   margin-top: 10px;
