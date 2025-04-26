@@ -12,6 +12,7 @@
 **Industry:** Education  
 **Type:** Individual Project  
 **Categories:** HTML, CSS, Vanilla JavaScript
+
 **Date:** 2024  
 **Timeline:** 2 hours  
 
