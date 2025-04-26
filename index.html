@@ -1,122 +1,173 @@
 <!DOCTYPE html>
 <html lang="ukr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Form</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-  <main class="container">
-    <img src="./images/back.png" class="form__img" alt="form image with skeleton with notebook "/>
-    <div class="form__wrap">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Permanent+Marker&display=swap"
+          rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      <form class="reg-form" id="registrationForm">
-        <div class="reg-form__header">
-          <img src="./images/logo.svg" class="form__logo" alt="image of the company logo"/>
-          <h2 class="form__title">Create your account</h2></div>
+<body>
+<main class="registration-form-container">
+  <img
+          src="./images/back.png"
+          class="registration-form__image"
+          alt="form image with skeleton with notebook"
+  />
+  <div class="registration-form__wrapper">
+    <form class="registration-form" id="registrationForm">
+      <div class="registration-form__header">
+        <img
+                src="./images/logo.svg"
+                class="registration-form__logo"
+                alt="image of the company logo"
+        />
+        <h2 class="registration-form__title">Create your account</h2>
+      </div>
 
-        <p class="form__slogan"> See what is going on with your business</p>
-        <ul class="fields">
-          <li class="fields__item">
-            <label class="form__label" for="name">Full Name</label>
-            <input
-                    class="form__input"
-                    type="text"
-                    id="name"
-                    placeholder="Your full name"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="username">Username</label>
-            <input
-                    class="form__input"
-                    type="text"
-                    id="username"
-                    placeholder="Your username"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="email">Email</label>
-            <input
-                    class="form__input"
-                    type="email"
-                    id="email"
-                    placeholder="someEmail@gmail.com"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="phone">Phone Number</label>
-            <input
-                    class="form__input"
-                    type="text"
-                    id="phone"
-                    placeholder="Enter your number"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="password">Password</label>
-            <input
-                    class="form__input"
-                    type="password"
-                    id="password"
-                    placeholder="Enter your password"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="passwordConfirm"
-            >Confirm Password</label
-            >
-            <input
-                    class="form__input"
-                    type="password"
-                    id="passwordConfirm"
-                    placeholder="Confirm your password"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label">Gender</label>
-            <div class="form__radio-group" id="advanced-usage_communication_radio_group">
-              <div class="radio-group__wrap">
-                <input type="radio" id="male" name="gender" class="input-gender" value="Male" />
-                <label for="male" class="radio-group__label">Male</label>
-              </div>
+      <p class="registration-form__slogan">
+        See what is going on with your business
+      </p>
 
-              <div class="radio-group__wrap">
-                <input type="radio" id="female" name="gender" class="input-gender" value="Female" />
-                <label for="female" class="radio-group__label">Female</label>
-              </div>
+      <ul class="registration-form__fields">
+        <li class="registration-form__field-item">
+          <label class="registration-form__label" for="name">Full Name</label>
+          <input
+                  class="registration-form__input"
+                  type="text"
+                  id="name"
+                  placeholder="Your full name"
+          />
+        </li>
 
-              <div class="radio-group__wrap">
-                <input
-                        type="radio"
-                        id="preferNotToSay"
-                        name="gender"
-                        class="input-gender"
-                        value="Prefer not to say"
-                />
-                <label for="preferNotToSay" class="radio-group__label">Prefer not to say</label>
-              </div>
+        <li class="registration-form__field-item">
+          <label class="registration-form__label" for="username">Username</label>
+          <input
+                  class="registration-form__input"
+                  type="text"
+                  id="username"
+                  placeholder="Your username"
+          />
+        </li>
+
+        <li class="registration-form__field-item">
+          <label class="registration-form__label" for="email">Email</label>
+          <input
+                  class="registration-form__input"
+                  type="email"
+                  id="email"
+                  placeholder="someEmail@gmail.com"
+          />
+        </li>
+
+        <li class="registration-form__field-item">
+          <label class="registration-form__label" for="phone">Phone Number</label>
+          <input
+                  class="registration-form__input"
+                  type="text"
+                  id="phone"
+                  placeholder="Enter your number"
+          />
+        </li>
+
+        <li class="registration-form__field-item">
+          <label class="registration-form__label" for="password">Password</label>
+          <input
+                  class="registration-form__input"
+                  type="password"
+                  id="password"
+                  placeholder="Enter your password"
+          />
+        </li>
+
+        <li class="registration-form__field-item">
+          <label class="registration-form__label" for="passwordConfirm"
+          >Confirm Password</label
+          >
+          <input
+                  class="registration-form__input"
+                  type="password"
+                  id="passwordConfirm"
+                  placeholder="Confirm your password"
+          />
+        </li>
+
+        <li class="registration-form__field-item">
+          <label class="registration-form__label">Gender</label>
+          <div class="registration-form__radio-group" id="gender-group">
+            <div class="registration-form__radio-option">
+              <input
+                      type="radio"
+                      id="male"
+                      name="gender"
+                      class="registration-form__gender-input"
+                      value="Male"
+              />
+              <label
+                      for="male"
+                      class="registration-form__radio-label"
+              >Male</label
+              >
             </div>
-          </li>
-        </ul>
-        <button type="submit" class="form__btn btn--register">Register</button>
-      </form>
-    </div>
-  </main>
 
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
-    <script src="inputmask.min.js"></script>
-    <script src="script.js" type="module"></script>
-  </body>
+            <div class="registration-form__radio-option">
+              <input
+                      type="radio"
+                      id="female"
+                      name="gender"
+                      class="registration-form__gender-input"
+                      value="Female"
+              />
+              <label
+                      for="female"
+                      class="registration-form__radio-label"
+              >Female</label
+              >
+            </div>
+
+            <div class="registration-form__radio-option">
+              <input
+                      type="radio"
+                      id="preferNotToSay"
+                      name="gender"
+                      class="registration-form__gender-input"
+                      value="Prefer not to say"
+              />
+              <label
+                      for="preferNotToSay"
+                      class="registration-form__radio-label"
+              >Prefer not to say</label
+              >
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <button
+              type="submit"
+              class="registration-form__button registration-form__button--register"
+      >
+        Register
+      </button>
+    </form>
+  </div>
+</main>
+
+<script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+<script src="inputmask.min.js"></script>
+<script src="script.js" type="module"></script>
+</body>
 </html>

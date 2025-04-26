@@ -6,6 +6,5 @@ export const selectors = {
     email: '#email',
     password: '#password',
     passwordConfirm: '#passwordConfirm',
-    genderGroup: '#advanced-usage_communication_radio_group',
-    regForm: '.reg-form',
+    genderGroup: '#gender-group',
 };

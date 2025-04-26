@@ -3,56 +3,56 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  background-color: #FFE6C9;
+  background-color: #ffe6c9;
   font-family: "Nunito Sans", sans-serif;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 100px;
   color: #525252;
 }
 
-.container {
+.registration-form-container {
   display: flex;
-  background-color: #FFFAF0;
+  background-color: #fffaf0;
   border-radius: 40px;
-  padding:10px;
+  padding: 10px;
 }
 
-.form__img {
+.registration-form__image {
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
   width: 765px;
   height: 700px;
-
 }
 
 ul {
   list-style: none;
 }
 
-.form__wrap {
-  /*padding-top: 30px;*/
+.registration-form__wrapper {
   width: 460px;
 }
-.reg-form__header {
+
+.registration-form__header {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.form__title {
+.registration-form__title {
   font-size: 36px;
   font-weight: 800;
-
 }
-.form__slogan {
+
+.registration-form__slogan {
   font-size: 16px;
   font-weight: 400;
 }
 
-.fields {
+.registration-form__fields {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -60,69 +60,69 @@ ul {
   margin-top: 10px;
 }
 
-.fields__item:not(:last-child) {
+.registration-form__field-item:not(:last-child) {
   flex-basis: calc((100% - 20px) / 2);
 }
-.form__label {
+
+.registration-form__label {
   font-size: 14px;
   font-weight: 600;
   color: #828282;
 }
 
-.form__input {
+.registration-form__input {
   margin-top: 4px;
   font-size: 16px;
   width: 100%;
   padding: 10px 20px;
   border-radius: 5px;
-  border: 1px solid #DED2D9;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: 1px solid #ded2d9;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+  rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.form__input::placeholder {
+.registration-form__input::placeholder {
   font-size: 14px;
   font-weight: 400;
-  color: #E0E0E0;
+  color: #e0e0e0;
 }
 
-
-.form__radio-group {
+.registration-form__radio-group {
   margin-top: 5px;
   display: flex;
   gap: 30px;
 }
 
-.radio-group__wrap {
-display: flex;
-align-items: center;
-gap: 5px;
+.registration-form__radio-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
-.radio-group__label {
+
+.registration-form__radio-label {
   font-size: 14px;
 }
 
-
-.input-gender {
-width: 30px;
-height: 20px;
+.registration-form__gender-input {
+  width: 30px;
+  height: 20px;
 }
 
-.form__btn {
-  font-family: Outfit, sans-serif;
+.registration-form__button {
+  font-family: "Outfit", sans-serif;
   border-radius: 6px;
-  background-color: #7F265B;
+  background-color: #7f265b;
   color: #ffffff;
   font-size: 18px;
   font-weight: 900;
   padding: 15px 20px;
-  border: 1px solid #7F265B;
+  border: 1px solid #7f265b;
   width: 100%;
   cursor: pointer;
   transition: background-color ease-in 300ms, color ease-in 300ms;
 }
 
-.form__btn:hover {
+.registration-form__button:hover {
   background-color: #ffffff;
-  color: #7F265B;
+  color: #7f265b;
 }
-
