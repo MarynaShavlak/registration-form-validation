@@ -21,7 +21,13 @@ validationReg
       value: 2,
       errorMessage: 'Name should have a minimum of 2 characters',
     },
-  ])
+  ]
+      ,
+      {
+        errorLabelStyle: {
+          color: '#7F265B'
+        }
+      })
   .addField(usernameFieldSelector, [
     { rule: 'required', errorMessage: 'Please enter your username' },
     {
@@ -34,7 +40,12 @@ validationReg
       value: /^[a-zA-Z0-9]+$/,
       errorMessage: 'Only letters (a-z or A-Z) and digits (0-9) are allowed',
     },
-  ])
+  ],
+      {
+        errorLabelStyle: {
+          color: '#7F265B'
+        }
+      })
   .addField(phoneFieldSelector, [
     {
       validator: value => {
@@ -50,15 +61,30 @@ validationReg
       },
       errorMessage: 'Phone number should have 10 digits',
     },
-  ])
+  ],
+      {
+        errorLabelStyle: {
+          color: '#7F265B'
+        }
+      })
   .addField(emailFieldSelector, [
     { rule: 'required', errorMessage: 'Please enter your email' },
     { rule: 'email', errorMessage: 'Please enter a valid email address' },
-  ])
+  ],
+      {
+        errorLabelStyle: {
+          color: '#7F265B'
+        }
+      })
   .addField(passwordFieldSelector, [
     { rule: 'required', errorMessage: 'Please enter your password' },
     { rule: 'strongPassword' },
-  ])
+  ],
+      {
+        errorLabelStyle: {
+          color: '#7F265B'
+        }
+      })
   .addField(passwordConfirmFieldSelector, [
     { rule: 'required', errorMessage: 'Please confirm your password' },
     {
@@ -69,10 +95,28 @@ validationReg
       errorMessage: 'Passwords do not match',
     },
     { rule: 'strongPassword' },
-  ])
-  .addRequiredGroup(genderFieldSelector);
-  
-  
+  ],
+      {
+        errorLabelStyle: {
+          color: '#7F265B'
+        }
+      })
+  .addField(genderFieldSelector, [
+      {
+        validator: (value) => {
+
+          return value !== undefined;
+        },
+        errorMessage: 'Please select your gender',
+      },
+    ],
+    {
+      errorLabelStyle: {
+        color: '#7F265B'
+      }
+    });
+
+
 
 const regForm = document.querySelector(regFormSelector);
 regForm.addEventListener('submit', sendForm);
