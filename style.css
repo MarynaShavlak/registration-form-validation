@@ -218,6 +218,10 @@ ul {
   margin-top: 5px;
   display: flex;
   gap: 30px;
+
+}
+.registration-form__field-item--genres {
+  flex-grow: 1;
 }
 
 .registration-form__radio-option {
